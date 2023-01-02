@@ -30,7 +30,8 @@ class _HomePageState extends State<HomePage> {
 
   loadModel() async {
     String res;
-    switch (_model) {
+
+    /*switch (_model) {
       case yolo:
         res = await Tflite.loadModel(
           model: "assets/yolov2_tiny.tflite",
@@ -53,7 +54,12 @@ class _HomePageState extends State<HomePage> {
         res = await Tflite.loadModel(
             model: "assets/ssd_mobilenet.tflite",
             labels: "assets/ssd_mobilenet.txt");
-    }
+    }*/
+    res = await Tflite.loadModel(
+      model: "assets/banknotes.tflite",
+      labels: "assets/banknotes.txt",
+    );
+    print("RESPONSE: ");
     print(res);
   }
 
